@@ -4,12 +4,6 @@
 	site_code = 'ffharz',
 	site_seed = '45fe985eee8b828d9df78f8740c5df807a43d76c477c06fabca970b4882e33e3',
 	
-	-- 32 bytes of random data, encoded in hexadecimal
-	-- This data must be unique among all sites and domains!
-  	-- Can be generated using: echo $(hexdump -v -n 32 -e '1/1 "%02x"' </dev/urandom)
-  	domain_seed = '3b5fc07e822ff54b0f8c9ce94fe8ead5939b95b299f3b2937f5bdad5c5d01eff',
-
-
 	prefix4 = '10.7.0.0/16',
 	prefix6 = 'fd0e:8db3:d50a::/64',
 
@@ -42,7 +36,6 @@
 		},
 	},
 
-
 	next_node = {
 		ip4 = '10.7.0.1',
 		ip6 = 'fd0e:8db3:d50a::1',
@@ -50,7 +43,6 @@
 	},
 
 	mesh = {
-		vxlan = false,
 		-- Options specific to the batman-adv routing protocol (optional)
 		batman_adv = {
 			-- Gateway selection class (optional)
@@ -59,9 +51,7 @@
  			gw_sel_class = 1,
 			-- FFHarz rennt mit BATMAN_IV - BATMAN_V und BATMAN_IV sind inkompatibel - https://www.open-mesh.org/projects/batman-adv/wiki/BATMAN_V
  			routing_algo = 'BATMAN_IV'
-  		},
-
-
+		},
 	},
 
 	mesh_vpn = {
@@ -74,6 +64,15 @@
 			backbone = {
 				limit = 1,
 				peers = {
+                                        gw4 = {
+                                                key = '9b0c48283124fd9760a05434fbad9004031014ecc38ded0939ab4003809ce9e5',
+                                                remotes = {
+							'"4.gw.harz.freifunk.net" port 9999',
+							'"4.gw.harz.freifunk.net" port 10000',
+							'"4.gw.harz.freifunk.net" port 10001',
+                                                },
+
+                                        },
 					gw3 = {
                                                 key = 'fb89b92c2217fcb25272aef04c38f3e2173be24ac3d4d2b679b72f9e3400f4b3',
                                                 remotes = {
@@ -121,10 +120,6 @@
 				},
 			},
 	},
-
-
-
-
 
 	autoupdater = {
 		enabled = 1,
@@ -209,7 +204,7 @@
                         	    -- set to 1440 to change once a day
 			            -- set to 1 minute to change every time the router gets offline
 		first = 5,                -- the first few minutes directly after reboot within which an Offline-SSID always may be activated (must be <= switch_timeframe)
-		prefix = 'FF_Offline_',   -- use something short to leave space for the nodename (no '~' allowed!)
+  		prefix = 'FF_Offline_',   -- use something short to leave space for the nodename (no '~' allowed!)
   		suffix = 'nodename',      -- generate the SSID with either 'nodename', 'mac' or to use only the prefix: 'none'
   
   		tq_limit_enabled = false, -- if false, the offline SSID will only be set if there is no gateway reacheable
@@ -219,5 +214,3 @@
   		tq_limit_min = 35         -- lower limit, below that the offline SSID will be used
 	},
 }
-
-
