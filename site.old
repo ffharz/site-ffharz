@@ -64,6 +64,15 @@
 			backbone = {
 				limit = 1,
 				peers = {
+                                        gw4 = {
+                                                key = '9b0c48283124fd9760a05434fbad9004031014ecc38ded0939ab4003809ce9e5',
+                                                remotes = {
+							'"4.gw.harz.freifunk.net" port 9999',
+							'"4.gw.harz.freifunk.net" port 10000',
+							'"4.gw.harz.freifunk.net" port 10001',
+                                                },
+
+                                        },
 					gw3 = {
                                                 key = 'fb89b92c2217fcb25272aef04c38f3e2173be24ac3d4d2b679b72f9e3400f4b3',
                                                 remotes = {
