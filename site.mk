@@ -26,8 +26,6 @@ GLUON_SITE_PACKAGES := \
 	haveged \
 	iptables \
 	iwinfo \
-	ffharz-reboot \
-	ffharz-fastd \
 	gluon-ssid-changer \
 	ffho-node-tuning
 
