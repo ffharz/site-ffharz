@@ -2,6 +2,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
 	gluon-alfred \
 	gluon-respondd \
+	gluon-authorized-keys \
 	gluon-autoupdater \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-contact-info \
@@ -26,8 +27,10 @@ GLUON_SITE_PACKAGES := \
 	haveged \
 	iptables \
 	iwinfo \
-	gluon-ssid-changer \
-	ffho-node-tuning
+	ffharz-reboot \
+	ffharz-fastd \
+	ffho-node-tuning \
+	gluon-ssid-changer 
 
 #	freifunk-p2pblock \
 #	ffharz-reboot \
@@ -127,12 +130,13 @@ GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PA
 GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PACKAGES_STORAGE)
 
 
-DEFAULT_GLUON_RELEASE := 0.9.5~$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.10.3~$(shell date '+%Y%m')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
+GLUON_BRANCH ?= experimental 
 export GLUON_BRANCH
 
 #GLUON_TARGET ?= ar71xx-generic
