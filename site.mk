@@ -24,6 +24,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-node-info \
 	gluon-setup-mode \
 	gluon-status-page \
+	gluon-status-page-mesh-batman-adv \
 	haveged \
 	iptables \
 	iwinfo \
@@ -130,13 +131,13 @@ GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PA
 GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PACKAGES_STORAGE)
 
 
-DEFAULT_GLUON_RELEASE := 0.10.3~$(shell date '+%Y%m')
+DEFAULT_GLUON_RELEASE := 0.10.6~$(shell date '+%Y%m')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
-GLUON_BRANCH ?= experimental 
+GLUON_BRANCH ?= stable 
 export GLUON_BRANCH
 
 #GLUON_TARGET ?= ar71xx-generic

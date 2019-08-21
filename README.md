@@ -1,5 +1,5 @@
 # site-ffharz
-site.conf für das Release 0.9.4 / v2017.1.x
+site.conf für das Release  0.10.6/ v2018.2.x
 Und am ende fallen dann alle images für das target ar71xx-generic raus. das sind die wichtigsten.
 Für weitere targets füre einfach folgendes nach dem make aus:
 ## eigenes Image bauen
@@ -7,7 +7,7 @@ Für weitere targets füre einfach folgendes nach dem make aus:
 git clone https://github.com/freifunk-gluon/gluon
 cd gluon
 git branch -a
-git checkout v2017.1.x
+git checkout v2018.2.x
 cd ..
 git clone https://github.com/ffharz/site-ffharz.git
 cp -r site-ffharz gluon/site
@@ -68,7 +68,7 @@ in CHANGELOG.md liegen die Info's zu den Änderungen!
 
 - wenn build länger zurückliegt muss das Release Datum mit `GLUON_RELEASE` mit angegeben werden
 
-`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=0.9.3~20171024`
+`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=0.10.6~20190821`
 
 
 Buildpad: http://pad.harz.freifunk.net/p/gluon
